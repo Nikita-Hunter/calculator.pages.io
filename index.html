@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#111111">
+  <title>Frontend test</title>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+  <main class="main-wrap">
+    <div class="calc-header">
+      <div class="calc-header__container container">
+        <div class="calc-header__inner">
+          <div class="calc-header__title">
+            <h1>Быстрый расчет стоимости банковской гарантии в 24 банках</h1>
+          </div>
+          <form action="" class="calc-header__form">
+            <div class="calc-header__form--input">
+              <input type="text" name="amountText" id="amountText" placeholder="Сумма, руб.">
+              <input onchange="amountValue()" type="range" min="2" max="2000000" value="0" name="amountRange" id="amountRange">
+            </div>
+            <div class="calc-header__form--input">
+              <input type="text" name="dayText" id="dayText" placeholder="Срок, дни">
+              <input onchange="dayValue()" type="range" step="50" min="2" max="4000" value="0" name="dayRange" id="dayRange">
+            </div>
+          </form>
+          <div class="calc-header__subtitle">
+            <h4>Впишите сумму и срок в днях, чтобы мы рассчитали стоимость банковской гарантии в днях</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="stages">
+      <div class="container__stages container">
+        <div class="stages__inner">
+          <div class="stages__title">
+            <h1>Как это работает?</h1>
+          </div>
+          <div class="stages__grid">
+            <div class="stages__item">
+              <div class="stages__item--img">
+                <img src="img/img-stages-1.svg" alt="">
+              </div>
+              <div class="stages__item--title">
+                <h3>Оформляете заявку онлайн</h3>
+              </div>
+              <div class="stages__item--subtitle">
+                <h4>Зарегистрируйтесь и в личном кабинете подайте заявку: впишите ИНН, номер аукциона и параметры продукта.</h4>
+              </div>
+            </div>
+            <div class="stages__item">
+              <div class="stages__item--img">
+                <img src="img/img-stages-2.svg" alt="">
+              </div>
+              <div class="stages__item--title">
+                <h3>Анализируем компанию и подбираем банк</h3>
+              </div>
+              <div class="stages__item--subtitle">
+                <h4>Мы сформировали систему онлайн оценки компании для выбора подходящего банка, чтобы снизить вероятность отказа и увеличить скорость получения продукта.</h4>
+              </div>
+            </div>
+            <div class="stages__item">
+              <div class="stages__item--img">
+                <img src="img/img-stages-3.svg" alt="">
+              </div>
+              <div class="stages__item--title">
+                <h3>Получайте проект гарантии уже через 60 минут</h3>
+              </div>
+              <div class="stages__item--subtitle">
+                <h4>После согласования проекта получение гарантии занимает от 2 до 30 минут, в зависимости от банка.</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="credits">
+      <div class="credits__container container">
+        <div class="credits__inner">
+          <div class="credits__title">
+            <h1>Становитесь агентом нашего сервиса и получайте до 40% с каждой выданной гарантии уже сегодня</h1>
+          </div>
+          <div class="credits__button">
+            <button type="submit" class="button-primary--big" id="buttonCredits">Пройти регистрацию</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="feedback">
+      <div class="feedback__container container">
+        <div class="feedback__inner">
+          <div class="feedback__title">
+            <h1>Наши результаты оцениваете вы</h1>
+          </div>
+          <div class="feedback__count">
+            <span>642 отзыва</span>
+          </div>
+          <div class="feedback__carousel owl-carousel">
+            <div class="feedback__item">
+              <div class="feedback__item--body">
+                <div class="feedback__item--title">
+                  <h3>Менеджер Мария выполняет работу своевременно, спасибо!))</h3>
+                </div>
+                <div class="feedback__item--warranty">
+                  <div class="block">
+                    <img src="img/star-vector.svg" alt="">
+                    <span>5/5</span>
+                  </div>
+                  <div class="block">
+                    <img src="img/bank-icon.svg" alt="">
+                    <span>БГУ-4032014</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="feedback__item">
+              <div class="feedback__item--body">
+                <div class="feedback__item--title">
+                  <h3>Очень легко с вами работать! СПАСИБО огромное!!!</h3>
+                </div>
+                <div class="feedback__item--warranty">
+                  <div class="block">
+                    <img src="img/star-vector.svg" alt="">
+                    <span>5/5</span>
+                  </div>
+                  <div class="block">
+                    <img src="img/bank-icon.svg" alt="">
+                    <span>БГУ-4032014</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="feedback__item">
+              <div class="feedback__item--body">
+                <div class="feedback__item--title">
+                  <h3>Большое спасибо за оперативность и дружелюбие, было очень приятно работать!</h3>
+                </div>
+                <div class="feedback__item--warranty">
+                  <div class="block">
+                    <img src="img/star-vector.svg" alt="">
+                    <span>5/5</span>
+                  </div>
+                  <div class="block">
+                    <img src="img/bank-icon.svg" alt="">
+                    <span>БГУ-4032014</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="feedback__item">
+              <div class="feedback__item--body">
+                <div class="feedback__item--title">
+                  <h3>СУПЕР</h3>
+                </div>
+                <div class="feedback__item--warranty">
+                  <div class="block">
+                    <img src="img/star-vector.svg" alt="">
+                    <span>5/5</span>
+                  </div>
+                  <div class="block">
+                    <img src="img/bank-icon.svg" alt="">
+                    <span>БГУ-4032014</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="feedback__item">
+              <div class="feedback__item--body">
+                <div class="feedback__item--title">
+                  <h3>Просто вау!</h3>
+                </div>
+                <div class="feedback__item--warranty">
+                  <div class="block">
+                    <img src="img/star-vector.svg" alt="">
+                    <span>5/5</span>
+                  </div>
+                  <div class="block">
+                    <img src="img/bank-icon.svg" alt="">
+                    <span>БГУ-4032014</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="feedback__item">
+              <div class="feedback__item--body">
+                <div class="feedback__item--title">
+                  <h3>Директор Степан во время все сделал!</h3>
+                </div>
+                <div class="feedback__item--warranty">
+                  <div class="block">
+                    <img src="img/star-vector.svg" alt="">
+                    <span>5/5</span>
+                  </div>
+                  <div class="block">
+                    <img src="img/bank-icon.svg" alt="">
+                    <span>БГУ-4032014</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="static">
+      <div class="static__container container">
+        <div class="static__inner">
+          <div class="static__grid">
+            <div class="static__item">
+              <div class="static__item--img">
+                <img src="img/statistic-image-1.svg" alt="">
+              </div>
+              <div class="static__item--title">
+                <h3>Тендерных специалистов и компаний в системе</h3>
+              </div>
+            </div>
+            <div class="static__item">
+              <div class="static__item--img">
+                <img src="img/statistic-image-2.svg" alt="">
+              </div>
+              <div class="static__item--title">
+                <h3>Максимальная сумма обеспечения</h3>
+              </div>
+            </div>
+            <div class="static__item">
+              <div class="static__item--img">
+                <img src="img/statistic-image-3.svg" alt="">
+              </div>
+              <div class="static__item--title">
+                <h3>Одобренных заявок</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/vendor.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

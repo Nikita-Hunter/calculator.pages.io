@@ -1,0 +1,554 @@
+:root {
+  --color-black: rgba(35, 35, 35, 1);
+  --color-graphit: rgba(87, 87, 87, 1);
+  --color-graphit-60: rgba(87, 87, 87, 0.6);
+  --color-accent: rgba(251, 177, 67, 1);
+  --color-accent--hover: rgba(255, 196, 77, 1);
+  --color-light: rgba(247, 248, 250, 1);
+  --color-white: rgb(255, 255, 255);
+}
+
+.custom-checkbox__field:checked + .custom-checkbox__content::after {
+  opacity: 1;
+}
+
+.custom-checkbox__field:focus + .custom-checkbox__content::before {
+  outline: 2px solid #f00;
+  outline-offset: 2px;
+}
+
+.custom-checkbox__field:disabled + .custom-checkbox__content {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+@font-face {
+  font-family: "Muller";
+  src: url("../fonts/../fonts/MullerRegular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next Reqular";
+  src: url("../fonts/../fonts/avenirnextcyr-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next Light";
+  src: url("../fonts/../fonts/AvenirNextCyr-UltraLight.woff2") format("woff2");
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next Black";
+  src: url("../fonts/../fonts/avenirnextcyr-demi.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-style: normal;
+  font-weight: 500;
+  color: var(--color-graphit);
+  background-color: var(--color-white);
+  font-family: "Avenir Next Reqular";
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.site-container {
+  overflow: hidden;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 900px;
+  width: 100%;
+}
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+main {
+  width: 100%;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 40px;
+  color: var(--color-black);
+  text-align: left;
+  font-family: "Avenir Next Black";
+}
+@media screen and (max-width: 320px) {
+  h1 {
+    font-size: 21px;
+    line-height: 27px;
+  }
+}
+
+h4 {
+  text-align: left;
+  color: var(--color-graphit);
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "Avenir Next Light";
+}
+
+h3 {
+  font-family: "Avenir Next Black";
+  font-size: 20px;
+  line-height: 24px;
+  text-align: left;
+  color: var(--color-black);
+}
+
+.calc-header {
+  width: 100%;
+  padding-top: 96px;
+}
+@media screen and (max-width: 320px) {
+  .calc-header {
+    padding-top: 56px !important;
+  }
+  .calc-header__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .calc-header__form--input {
+    max-width: 100% !important;
+    width: 100%;
+  }
+  .calc-header__form--input:first-child {
+    margin-right: 0 !important;
+    margin-bottom: 16px;
+  }
+}
+.calc-header__inner {
+  width: 100%;
+}
+.calc-header__title {
+  max-width: 530px;
+  margin-bottom: 32px;
+}
+.calc-header__form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+}
+.calc-header__form--input {
+  position: relative;
+  max-width: 400px;
+  width: 400px;
+  height: 64px;
+  border-radius: 2px;
+  transition: all 0.2s linear;
+  border: 1px solid #EAEAEA;
+}
+.calc-header__form--input:hover, .calc-header__form--input:focus {
+  box-shadow: 0px 0px 20px rgba(251, 177, 67, 0.2);
+  border: 1px solid rgba(251, 177, 67, 0.5);
+}
+.calc-header__form--input:first-child {
+  margin-right: 24px;
+}
+.calc-header__form--input input[type=range] {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  width: 100%;
+  -webkit-appearance: none;
+  background-color: #FFE7C5;
+  height: 1px;
+}
+.calc-header__form--input input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 13px;
+  height: 13px;
+  background-color: #0D0F5A;
+  transform: rotate(45deg);
+}
+.calc-header__form--input input[type=range]::-moz-slider-thumb {
+  -moz-appearance: none;
+  width: 13px;
+  height: 13px;
+  background-color: #0D0F5A;
+  transform: rotate(45deg);
+}
+.calc-header__form--input input[type=text] {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  padding: 22px 15px 21px 15px;
+  font-size: 16px;
+  line-height: 20px;
+  border: none;
+  font-weight: 400;
+  color: var(--color-graphit);
+}
+.calc-header__form--input input[type=text]::-moz-placeholder {
+  color: var(--color-graphit);
+}
+.calc-header__form--input input[type=text]:-ms-input-placeholder {
+  color: var(--color-graphit);
+}
+.calc-header__form--input input[type=text]::placeholder {
+  color: var(--color-graphit);
+}
+.calc-header__subtitle {
+  max-width: 353px;
+}
+
+.credits {
+  position: relative;
+  width: 100%;
+  height: 368px;
+  background-color: #0D0F5A;
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 320px) {
+  .credits__title {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .credits__title h1 {
+    font-size: 21px;
+    line-height: 27px;
+  }
+  .credits__button {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  .credits__button button {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+.credits__container {
+  z-index: 5;
+}
+.credits::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../img/credit-mask-bg.svg") no-repeat center;
+  background-size: cover;
+  z-index: 1;
+}
+.credits__inner {
+  width: 100%;
+}
+.credits__title {
+  max-width: 595px;
+  width: 595px;
+  margin-bottom: 40px;
+}
+.credits__title h1 {
+  color: var(--color-white);
+}
+
+.feedback {
+  width: 100%;
+  padding: 72px 0;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: var(--color-light);
+}
+.feedback__container {
+  position: relative;
+}
+.feedback__inner {
+  width: 100%;
+  position: relative;
+}
+.feedback__title {
+  margin-bottom: 38px;
+}
+.feedback__count {
+  margin-bottom: 22px;
+}
+.feedback__count span {
+  color: var(--color-graphit);
+  font-size: 14px;
+  line-height: 20px;
+  z-index: 2 !important;
+}
+.feedback__carousel {
+  width: 100vw;
+  display: flex;
+  display: inline-block;
+  align-items: flex-start;
+}
+.feedback__item {
+  background-color: #fff;
+  padding: 20px 12px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.feedback__item--body {
+  width: 240px;
+}
+.feedback__item--title {
+  width: 100%;
+  margin-bottom: 16px;
+}
+.feedback__item--title h3 {
+  font-family: "Avenir Next Reqular";
+  font-size: 16px;
+  line-height: 20px;
+  text-align: left;
+}
+.feedback__item--warranty {
+  display: flex;
+  align-items: center;
+}
+.feedback__item--warranty .block {
+  display: flex;
+  align-items: center;
+}
+.feedback__item--warranty .block img {
+  width: 12px;
+  height: 12px;
+  margin-right: 4px;
+}
+.feedback__item--warranty .block:first-child {
+  margin-right: 20px;
+}
+.feedback__item--warranty .block:first-child span {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-accent);
+}
+.feedback__item--warranty .block:last-child {
+  color: rgba(87, 87, 87, 0.6);
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+.my-prev-btn {
+  height: 31px;
+  width: 31px;
+  border-radius: 2px 0px 0px 2px;
+  border: 1px solid #EAEAEA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #EAEAEA;
+  transition: all 0.2s linear;
+  font-size: 16px;
+  cursor: pointer;
+}
+.my-prev-btn:hover, .my-prev-btn:focus, .my-prev-btn:active {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border: 1px solid white;
+}
+
+.my-next-btn {
+  height: 31px;
+  width: 31px;
+  border-radius: 0px 2px 2px 0px;
+  border: 1px solid #EAEAEA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #EAEAEA;
+  transition: all 0.2s linear;
+  font-size: 16px;
+  cursor: pointer;
+}
+.my-next-btn:hover, .my-next-btn:focus, .my-next-btn:active {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border: 1px solid white;
+}
+
+.owl-nav {
+  position: absolute;
+  top: -32px;
+  transform: translateY(-16px);
+  left: 0;
+  max-width: 900px;
+  width: 900px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.stages {
+  width: 100%;
+  padding: 96px 0;
+}
+@media screen and (max-width: 320px) {
+  .stages {
+    overflow-x: hidden;
+  }
+  .stages__grid {
+    grid-template-columns: unset !important;
+    padding: 64px 0 !important;
+  }
+}
+.stages__inner {
+  width: 100%;
+}
+.stages__title {
+  margin-bottom: 29px;
+}
+.stages__grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+.stages__item {
+  width: 100%;
+}
+.stages__item--img {
+  width: 120px;
+  height: 88px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.stages__item--title {
+  margin-bottom: 12px;
+}
+
+.static {
+  width: 100%;
+  position: relative;
+  padding-top: 145px;
+  padding-bottom: 90px;
+}
+.static::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 89.51px;
+  background: url("../img/section-after-img.png") no-repeat center;
+  background-size: cover;
+}
+@media screen and (max-width: 320px) {
+  .static {
+    overflow-x: hidden;
+  }
+  .static__grid {
+    grid-template-columns: unset !important;
+  }
+  .static__item {
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    margin-bottom: 32px !important;
+  }
+  .static__item--title {
+    width: 200px !important;
+  }
+}
+.static__inner {
+  width: 100%;
+}
+.static__grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 90px;
+}
+.static__item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.static__item--img {
+  width: 112px;
+  height: 112px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.static__item--title {
+  width: 100%;
+}
+.static__item--title h3 {
+  font-family: Avenir Next Reqular;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: left;
+}
+
+.button-primary--big {
+  max-width: 240px;
+  width: 240px;
+  background-color: var(--color-accent);
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  display: block;
+  cursor: pointer;
+  padding: 22px 0;
+  font-family: "Avenir Next Reqular";
+  font-size: 16px;
+  line-height: 20px;
+  transition: all 0.2s ease-in-out;
+}
+.button-primary--big:hover, .button-primary--big:focus {
+  background-color: var(--color-accent--hover);
+}
